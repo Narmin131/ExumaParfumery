@@ -119,7 +119,7 @@ body{
             right: 30px;
             font-size: 1.3rem;
             cursor: pointer;
-            z-index: 5;
+            
             right: 30px;
             top: 30px;
             
@@ -304,19 +304,26 @@ footer{
 .right-menu{
     width: 100%;
     height: 100vh;
-
     position: fixed;
-    z-index: 2;
-    background-color: white;
+    background-color: #fff;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: start;
     align-items: center;
     top: 0;
     right: 0;
     position: absolute;
     margin: 0;
     transition: all .3s ease;
+    transform: translateX(100%);
+   .fa-xmark{
+       position: absolute;
+       left: 40px;
+       color: #000;
+       font-size: 2rem;
+       top: 30px;
+       cursor: pointer;
+   }
     .icons{
         width: auto;
         display: flex;
@@ -328,13 +335,13 @@ footer{
         left: 40px;
         bottom: 80px;
         i{
-          font-size: 1.1rem;
+          font-size: .8rem;
           cursor: pointer;
-          width: 2.5rem;
+          width: 2rem;
           border: 1px solid #696C6D;
           border-radius: 50%;
-          height: 2.5rem;
-          line-height: 2.5rem;
+          height: 2rem;
+          line-height: 2rem;
           text-align: center;
           color:#696C6D;
           transition: all .3s ease;
@@ -348,35 +355,50 @@ footer{
     }
     ul{
         width: 40%;
-        height: 100%;
+        height: 70%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-end;
         align-items: center;
         margin: 0;
         li{
             transition: all .3s ease;
+            margin-top: 5rem;
             a{
                 color: #000;
                 text-decoration: none;
                 font-size: 1.8rem;
-                font-weight: 600;
+                font-weight: 200;
                 transition: all .3s ease;
                 border-bottom: 3px solid transparent;
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 letter-spacing: 5px;
+                position: relative;
+                &::before{
+                    content: "";
+                    display: block;
+                    width: 0;
+                    position: absolute;
+                    left: -50px;
+                    top: 50%;
+                    margin-top: -1px;
+                    border-top: 2px solid;
+                    transition: width .2s;
+                }
                 &:hover{
                     color: #333;
-                    border-bottom-color:black ;
-                    font-style: italic;
+                    &::before{
+                        width: 40px;
+                    }
                 }
             }
         }
     }
 }
 .transform{
-    transform:translateX(100%) ;
+    transform:translateX(0%) ;
 }
+
 .hide{
     overflow-y: hidden;
 }

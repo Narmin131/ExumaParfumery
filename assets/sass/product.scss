@@ -1,6 +1,7 @@
 body{
     overflow-x: hidden;
 }
+
 .right-menu{
     width: 100%;
     height: 100vh;
@@ -103,6 +104,7 @@ body{
     overflow-y: hidden;
 }
 
+
 .lang{
     width: 100%;
     height: 7vh;
@@ -111,7 +113,6 @@ body{
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    
     .first-ul{
         width: 20%;
         height: 100%;
@@ -149,8 +150,8 @@ body{
                 position: absolute;
                 top: 5vh;
                 background-color: #fff;
-                z-index: 234;
                 border: 1px solid black;
+                z-index: 234;
                 margin: 0;
                 padding: 0;
                 opacity: 0;
@@ -172,14 +173,12 @@ body{
         }
     }
 }
-    .nav{
+
+.nav{
         width: 100%;
         height: 14vh;
         cursor: pointer;
         transition: all .3s;
-        &:hover{
-            background-color: white;
-        }
         .logo{
             width: auto;
             height: 100%;
@@ -206,68 +205,126 @@ body{
                 }
             }
         }
-        .i{
-            height: 100%;
-            width: auto;
+       .i{
+           height: 100%;
+           width: auto;
+           position: absolute;
+           right: 5px;
+           top: 30px;
+        i{
             position: absolute;
-            right: 30px;
-            top: 30px;
-         i{
-             position: absolute;
-             right: 30px;
-             font-size: 1.3rem;
-             cursor: pointer;
-             
-                 right: 10px;
-                 top: 30px;
-         }
+            right: 5px;
+            font-size: 1.3rem;
+            cursor: pointer;
+           
+                right: 30px;
+                top: 30px;
         }
-    }
+       }
+}
+
   
-  
-.contact{
+.product{
     width: 100%;
     height: auto;
-    padding: 60px 0;
-    h1{
-        color: black;
-        font-weight: 600;
-        font-size: 2.6rem;
-        margin: 1.4rem 0;
+    padding: 30px 0;
+    .left-imgs{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+img{
+    cursor: pointer;
+    border: 1px solid #eee;
+}
     }
-    p{
-        font-size: 1.4rem;
-        color: black;
-        font-weight: 400;
-        span{
-            color: rgb(81, 80, 80);
-            margin-left: 15px;
-            font-weight: 300;
+    .product-img{
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+    }
+    .product-text{
+        width: 90%;
+        height: 100%;
+        padding: 40px 0 40px 40px ;
+
+        h4{
+            font-weight: 700;
+            font-size: 2.1rem;
+        }
+        p{
+            font-size: 1rem;
+            margin: 2rem 0;
+            line-height: 1.4;
+        }
+        a{
+            width: 2rem;
+            background-color: #000;
+            height: 2rem;
+            color: #fff;
+            padding: 9px 40px;
+            border:2px solid #000;
+            font-size: 1.2rem;
+            transition: all .3s ease;
+            margin-top: 5rem;
+            text-decoration: none;
+            &:hover{
+                background-color: #fff;
+                color: #000;
+            }
         }
     }
-    input{
-        margin: 10px 0;
-        padding: 8px 15px;
+}
+
+
+.related-products{
+    height: auto;
+    padding-bottom: 20px;
+    h1{
+        font-weight: bold;
     }
-    .sub{
-        width: 80%;
-    }
-    textarea{
-        width: 80%;
-        padding: 10px;
-    }
-    button{
-        outline: none;
-        background-color: transparent;
+    .img-box{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
         transition: all .3s ease;
-        border: 2px solid black;
-        margin-top: 1rem;
-        padding: 8px 14px;
-        color: white;
-        background-color: black;
-        &:hover{
-            color: black;
-            background-color: white;
+         .img{
+             overflow: hidden;
+         }
+         img{
+             transition: all .4s ease;
+         }
+         &:hover{
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+         }
+        &:hover img{
+                transform: scale(1.3);
+        }
+        &:hover .img-text{   
+            transform: translateY(-30px);
+          }
+        h5{
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 10px 0;
+        }
+        .img-text{
+            transition: all .3s ease;
+            width: 100%;
+            display: flex;
+            flex-direction:column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: #fff;
+            position: relative;
+            i{
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
         }
     }
 }
@@ -276,6 +333,7 @@ body{
 
 
 
+  
 footer{
     padding: 30px 0 90px 0;
     h4{
@@ -320,8 +378,6 @@ footer{
 }
 
 
-
-
 @media (max-width:576px) {
     .lang{
         padding: 0 50px;
@@ -332,28 +388,11 @@ footer{
         }
     }
     footer{
-        padding: 20px 0 !important ;
         ul{
             padding: 0 !important;
         }
-        
-    }
-    .contact{
-        iframe{
-            padding: 30px 0;
-            height: 500px !important;
-        }
-        .sub,textarea{
-            width: 97%;
-        }
-        .inp{
-            width: 48%;
-        }
-        padding: 30px 0 50px 0 !important;
     }
 }
-
-
 
 
 @media (min-width:577px) and (max-width:768px) {

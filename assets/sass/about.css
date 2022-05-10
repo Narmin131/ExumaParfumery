@@ -111,17 +111,17 @@ body {
   width: 100%;
   height: 100vh;
   position: fixed;
-  background-color: white;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -131,6 +131,17 @@ body {
   margin: 0;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.right-menu .fa-xmark {
+  position: absolute;
+  left: 40px;
+  color: #000;
+  font-size: 2rem;
+  top: 30px;
+  cursor: pointer;
 }
 
 .right-menu .icons {
@@ -154,13 +165,13 @@ body {
 }
 
 .right-menu .icons i {
-  font-size: 1.1rem;
+  font-size: .8rem;
   cursor: pointer;
-  width: 2.5rem;
+  width: 2rem;
   border: 1px solid #696C6D;
   border-radius: 50%;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  height: 2rem;
+  line-height: 2rem;
   text-align: center;
   color: #696C6D;
   -webkit-transition: all .3s ease;
@@ -176,7 +187,7 @@ body {
 
 .right-menu ul {
   width: 40%;
-  height: 100%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,9 +195,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -196,29 +207,46 @@ body {
 .right-menu ul li {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
+  margin-top: 5rem;
 }
 
 .right-menu ul li a {
   color: #000;
   text-decoration: none;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 200;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   border-bottom: 3px solid transparent;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   letter-spacing: 5px;
+  position: relative;
+}
+
+.right-menu ul li a::before {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  margin-top: -1px;
+  border-top: 2px solid;
+  -webkit-transition: width .2s;
+  transition: width .2s;
 }
 
 .right-menu ul li a:hover {
   color: #333;
-  border-bottom-color: black;
-  font-style: italic;
+}
+
+.right-menu ul li a:hover::before {
+  width: 40px;
 }
 
 .transform {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 .hide {
@@ -322,7 +350,6 @@ body {
   right: 30px;
   font-size: 1.3rem;
   cursor: pointer;
-  z-index: 657687;
   right: 10px;
   top: 5px;
 }

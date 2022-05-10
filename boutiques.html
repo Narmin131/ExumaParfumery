@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="right-menu transform">
+        <div class="right-menu ">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -69,6 +69,7 @@
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-twitter "></i>
             </div>
+            <i class="fa-solid fa-xmark close"></i>
         </div>
 
     <!-- navbar end -->
@@ -166,9 +167,14 @@
         crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
         <script >
-            $('.buton').click(function(){
-        $('.right-menu').toggleClass('transform');
-        $('body').toggleClass('hide');
+          $('.buton').click(function(){
+        $('.right-menu').addClass('transform');
+        $('body').addClass('hide');
+    })
+
+    $('.close').click(function(){
+        $('.right-menu').removeClass('transform');
+        $('body').removeClass('hide');
     })
         </script>
 </body>

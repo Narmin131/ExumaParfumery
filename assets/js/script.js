@@ -31,6 +31,11 @@ three.addEventListener('click',third);
 
 
 $('.buton').click(function(){
-    $('.right-menu').toggleClass('transform');
-    $('body').toggleClass('hide');
+    $('.right-menu').addClass('transform');
+    $('body').addClass('hide');
+})
+
+$('.close').click(function(){
+    $('.right-menu').removeClass('transform');
+    $('body').removeClass('hide');
 })
